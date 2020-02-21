@@ -1,7 +1,15 @@
-import { mockData } from "./mockData.js";
+// let mockData;
+
+fetch("./js/mockData.json")
+  .then(response => response.json())
+  .then(data => {
+    const mockData = data;
+    const sprinkleData = new SprinkleData(mockData);
+  });
 
 class SprinkleData {
-  constructor() {
+  constructor(mockData) {
+    this.mockData = mockData;
     this.render();
   }
 
@@ -12,7 +20,7 @@ class SprinkleData {
   }
 
   addNavTitle() {
-    mockData.forEach(element => {
+    this.mockData.cardList.forEach(element => {
       const title = element.title;
 
       const newLi = document.createElement("li");
@@ -29,7 +37,7 @@ class SprinkleData {
   }
 
   addSlide() {
-    mockData.forEach(element => {
+    this.mockData.cardList.forEach(element => {
       const img = element.image;
       const header = element.header;
       const sentence = element.contents;
@@ -85,5 +93,3 @@ class SprinkleData {
     slides.insertBefore(clonedLast, slides.firstElementChild);
   }
 }
-
-const sprinkleData = new SprinkleData();
