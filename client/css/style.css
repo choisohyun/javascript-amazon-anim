@@ -27,6 +27,7 @@
 
 .slider {
   width: calc(100% * 6);
+  /* translate: -100%; */
 }
 
 .slider > li {
