@@ -3,7 +3,6 @@ import { TemplateData } from "./templateData.js";
 
 // const jsonFileUrl = "http://localhost:8080/carousel";
 const jsonFileUrl = "../../server/carouselData.json";
-const data = localStorage.getItem("carouselData");
 
 const carousel = { slideAll: document.querySelector(".slider") };
 const arrowButtons = { buttons: document.querySelectorAll(".slide-btn > button") };
@@ -17,10 +16,7 @@ const config = Object.assign(carousel, arrowButtons, width, currentIndex, maxInd
   fetch(jsonFileUrl)
     .then(response => response.json())
     .then(carouselData => {
-      localStorage.setItem("carouselData", JSON.stringify(carouselData));
-    })
-    .then(() => {
-      const templateData = new TemplateData(JSON.parse(data));
+      const templateData = new TemplateData(carouselData);
     })
     .then(() => {
       const carousel = new Carousel(config);
