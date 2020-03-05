@@ -1,4 +1,4 @@
-import { setTransform, setTransition } from "./util.js";
+import { setTransform, setTransition } from "../lib/util.js";
 
 class Carousel {
   constructor(config) {
