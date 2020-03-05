@@ -2,7 +2,7 @@ import { Carousel } from "./carousel.js";
 import { TemplateData } from "./templateData.js";
 
 // const jsonFileUrl = "http://localhost:8080/carousel";
-const jsonFileUrl = "../../../server/carouselData.json";
+const jsonFileUrl = "../../server/carouselData.json";
 const data = localStorage.getItem("carouselData");
 
 const carousel = { slideAll: document.querySelector(".slider") };

@@ -2,7 +2,7 @@ import { SearchBox } from "./searchBox.js";
 import { AutoComplete } from "./autoComplete.js";
 import { TemplateData } from "./templateData.js";
 
-const jsonFileUrl = "../../../server/productData.json";
+const jsonFileUrl = "../../server/productData.json";
 const data = localStorage.getItem("mockData");
 
 const controllData = data => {
