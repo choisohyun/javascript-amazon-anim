@@ -14,7 +14,7 @@ const config = Object.assign(carousel, arrowButtons, width, currentIndex, maxInd
 (() => {
   fetch(jsonFileUrl)
     .then(response => response.json())
-    .then(carouselData => 
+    .then(carouselData => {
       const templateData = new TemplateData(carouselData);
     })
     .then(() => {
