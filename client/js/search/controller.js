@@ -3,7 +3,7 @@ import { AutoComplete } from "./autoComplete.js";
 import { TemplateData } from "./templateData.js";
 
 const jsonFileUrl = "../../server/productData.json";
-const data = localStorage.getItem("mockData");
+let data;
 
 const controllData = data => {
   const searchBox = new SearchBox();
@@ -26,7 +26,7 @@ const controllData = data => {
   fetch(jsonFileUrl)
     .then(response => response.json())
     .then(mockData => {
-      localStorage.setItem("mockData", JSON.stringify(mockData));
+      data = mockData;
     })
     .then(() => new TemplateData())
     .then(() => controllData(data));
