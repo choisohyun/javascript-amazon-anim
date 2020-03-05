@@ -7,7 +7,7 @@ let data;
 
 const controllData = data => {
   const searchBox = new SearchBox();
-  const autoComplete = new AutoComplete(JSON.parse(data));
+  const autoComplete = new AutoComplete(data);
   const searchTerm = document.querySelector(".search-term");
   const DELAY_TIME = 300;
 
